@@ -7,9 +7,10 @@ class ModalBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final myController = TextEditingController();
 
+
     return Container(
-      color: Colors.black,
       decoration: BoxDecoration(
+        color: Colors.black,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(5.0),
           topRight: Radius.circular(5.0),
@@ -57,10 +58,11 @@ class ModalBottomSheet extends StatelessWidget {
               onPressed: () {
                 final newTodo = ToDo()
                   ..todo = myController.text
-                  ..date = DateTime.now();
+                  ..date = DateTime.now().toString();
 
                 final box = Boxes.getTodos();
                 box.add(newTodo);
+                Navigator.pop(context);
               },
               child: Text(
                 'Add',

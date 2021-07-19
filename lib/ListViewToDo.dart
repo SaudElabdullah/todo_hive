@@ -13,10 +13,10 @@ class ListViewToDo extends StatelessWidget {
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       padding: const EdgeInsets.all(5),
-      itemCount: (toDoList.isEmpty) ? -1 : toDoList.length,
+      itemCount: toDoList.length,
       itemBuilder: (BuildContext context, int index) {
         return ListTileToDo(
-          toDo: (index == -1) ? ToDo() : toDoList.elementAt(index),
+          toDo: toDoList.elementAt(index),
         );
       },
     );

@@ -18,6 +18,16 @@ class _ToDoListState extends State<ToDoList> {
     super.dispose();
   }
 
+  Widget isToDoNull(List<ToDo> toDoList){
+    if(toDoList.isEmpty){
+      return Text('no Todos');
+    } else{
+      return ListViewToDo(
+        toDoList: toDoList,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,23 +47,23 @@ class _ToDoListState extends State<ToDoList> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: ValueListenableBuilder<Box<ToDo>>(
-        valueListenable: Boxes.getTodos().listenable(),
-        builder: (context, box, _) {
-          final todos = box.values.toList().cast<ToDo>();
-          return Container(
-            color: Colors.black,
-            padding: EdgeInsets.only(
-              left: 15,
-              right: 15,
-              bottom: 5,
-              top: 5,
-            ),
-            child: ListViewToDo(
-              toDoList: todos,
-            ),
-          );
-        },
+      body: SafeArea(
+        child: ValueListenableBuilder<Box<ToDo>>(
+          valueListenable: Boxes.getTodos().listenable(),
+          builder: (context, box, _) {
+            final todos = box.values.toList().cast<ToDo>();
+            return Container(
+              // color: Colors.black,
+              padding: EdgeInsets.only(
+                left: 15,
+                right: 15,
+                bottom: 5,
+                top: 5,
+              ),
+              child: isToDoNull(todos),
+            );
+          },
+        ),
       ),
     );
   }
