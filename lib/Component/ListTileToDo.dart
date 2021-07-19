@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_hive/todo.dart';
+import 'package:todo_hive/Models/todo.dart';
 
 class ListTileToDo extends StatelessWidget {
   ListTileToDo({

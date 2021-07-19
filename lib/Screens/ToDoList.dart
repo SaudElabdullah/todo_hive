@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:todo_hive/Boxes.dart';
-import 'package:todo_hive/ListViewToDo.dart';
-import 'package:todo_hive/ModalBottomSheet.dart';
-import 'package:todo_hive/todo.dart';
+import 'package:todo_hive/Services/Boxes.dart';
+import 'package:todo_hive/Component/ListViewToDo.dart';
+import 'package:todo_hive/Component/ModalBottomSheet.dart';
+import 'package:todo_hive/Models/todo.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class ToDoList extends StatefulWidget {
